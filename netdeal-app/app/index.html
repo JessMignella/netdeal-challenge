@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro e Lista de Funcionários</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <nav>
+        <a href="#/cadastro">Cadastro de Funcionário</a>
+        <a href="#/funcionarios">Lista de Funcionários</a>
+    </nav>
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="services/funcionarioService.js"></script>
+    <script src="controllers/mainController.js"></script>
+    <script src="controllers/funcionarioListController.js"></script>
+    <script src="components/autocomplete/autocomplete.js"></script>
+    <script src="components/senhaMeter/senhaMeter.js"></script>
+    <script src="components/funcionarioRow/funcionarioRow.js"></script>
+    
+</body>
+</html>

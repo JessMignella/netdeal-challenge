@@ -1,0 +1,14 @@
+<tr ng-repeat="funcionario in funcionarios">
+    <td>{{ funcionario.cargo.titulo }}</td>
+    <td>{{ funcionario.nome }}</td>
+    <td>{{ funcionario.senhaStrength.descricao }}</td>
+    <td>{{ funcionario.senhaStrength.score }}%</td>
+    <td>{{ funcionario.senhaStrength.descricao }}</td>
+    <td ng-if="funcionario.funcionarios.length > 0" ng-click="toggleGrupo(funcionario)">
+        <span ng-if="!funcionario.expanded">[+]</span>
+        <span ng-if="funcionario.expanded">[-]</span>
+    </td>
+</tr>
+<funcionario-row 
+ng-if="funcionario.expanded && funcionario.funcionarios.length > 0"
+funcionario="funcionario.funcionarios"></funcionario-row>

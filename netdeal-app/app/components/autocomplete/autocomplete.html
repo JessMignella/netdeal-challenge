@@ -1,0 +1,8 @@
+<div class="autocomplete-container">
+  <input type="text" ng-model="query" placeholder="Selecione" ng-focus="showDropdown = true">
+  <ul class="autocomplete-dropdown" ng-show="showDropdown && filteredItems().length">
+      <li ng-repeat="item in filteredItems()" ng-click="selectItem(item)">
+          {{ item.titulo || item.nome || item}}
+      </li>
+  </ul>
+</div>

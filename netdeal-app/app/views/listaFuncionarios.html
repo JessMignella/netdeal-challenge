@@ -1,0 +1,18 @@
+<div class="container" ng-controller="funcionarioListController">
+    <h1>Lista de Funcionários</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cargo</th>
+                <th>Nome</th>
+                <th>Força da Senha</th>
+                <th>Score (%)</th>
+                <th>Descrição do Score</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <funcionario-row funcionarios="hierarquiaFuncionarios"></funcionario-row>
+        </tbody>
+    </table>
+</div>

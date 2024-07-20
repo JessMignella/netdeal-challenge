@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8081}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  application:
+    name: netdeal-api
+  datasource:
+    url: jdbc:mysql://localhost:3306/funcionario_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+  logging:
+    level:
+      org.hibernate: DEBUG
+      org.springframework.boot: DEBUG

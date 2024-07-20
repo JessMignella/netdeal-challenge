@@ -1,0 +1,25 @@
+
+<div class="senha-meter">
+    <div class="senha-container">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" ng-model="senha" ng-change="atualizarScore()" ng-class="{'is-invalid': score < 50}">
+    </div>
+    <div class="score-container" ng-show="senha.length > 0">
+        <div class="progress">
+            <div class="progress-bar" role="progressbar"
+                 ng-class="{
+                    'is-weak': score < 20,
+                    'is-medium': score >= 20 && score < 60,
+                    'is-strong': score >= 60 && score < 80,
+                    'is-very-strong': score >= 80
+                 }"
+                 ng-style="{'width': score + '%'}" 
+                 aria-valuenow="{{ score }}" 
+                 aria-valuemin="0" 
+                 aria-valuemax="100">
+                {{ score }}%
+            </div>
+        </div>
+        <span class="score-description">{{ obterDescricaoScore() }}</span>
+    </div>
+</div>
