@@ -1,6 +1,7 @@
 package br.com.netdeal.domain.entity;
 
-import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 import java.util.HashSet;
@@ -8,9 +9,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Embeddable
 @Data
+@Entity
 public class ForcaSenha {
+    @Id
     private int score;
     private String descricao;
 
@@ -66,7 +68,7 @@ public class ForcaSenha {
         } else if (score < 40) {
             return "Fraca";
         } else if (score < 60) {
-            return "Média";
+            return "Media";
         } else if (score < 80) {
             return "Forte";
         } else {

@@ -12,7 +12,11 @@ public class Funcionario {
 
     private String nome;
 
-    @Embedded
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name = "cargo_titulo", referencedColumnName = "titulo"),
+            @JoinColumn(name = "cargo_nivel", referencedColumnName = "nivel")
+    })
     private Cargo cargo;
 
     @ManyToOne
@@ -21,14 +25,8 @@ public class Funcionario {
 
     private String senha;
 
-    @Embedded
+    @ManyToOne
+    @JoinColumn(name = "forca_senha_score")
     private ForcaSenha forcaSenha;
-
-    @Embeddable
-    @Data
-    public static class Cargo {
-        private String titulo;
-        private int nivel;
-    }
 
 }

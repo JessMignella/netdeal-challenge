@@ -24,6 +24,7 @@ app.factory('funcionarioService', function($http) {
     deleteFuncionario: function(id) {
       return $http.delete(`${baseUrl}/` + id);
     },
+    
     getFuncionarioByLiderancaId:function(id){
       return $http.get(`${baseUrl}/lideranca/` + id);
     }

@@ -1,5 +1,5 @@
 <div class="container" ng-controller="mainController">
-    <h1>Cadastro de Funcionário</h1>
+    <h1>{{ isEdit ? 'Editar Funcionário' : 'Cadastrar Funcionário' }}</h1>
     <form name="funcionarioForm" ng-submit="salvarFuncionario()">
         <label for="nome">Nome do Funcionário:</label>
         <input type="text" id="nome" ng-model="funcionario.nome" required minlength="2">
@@ -14,6 +14,6 @@
 
         <senha-meter senha="funcionario.senha"></senha-meter>
 
-        <button type="submit">Salvar</button>
+        <button type="submit" class="btn btn-success">{{ isEdit ? 'Salvar' : 'Cadastrar' }}</button>
     </form>
 </div>

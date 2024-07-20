@@ -1,18 +1,41 @@
-<div class="container" ng-controller="funcionarioListController">
+<div class="container-list" ng-controller="funcionarioListController">
     <h1>Lista de Funcionários</h1>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Cargo</th>
                 <th>Nome</th>
+                <th>Cargo</th>
                 <th>Força da Senha</th>
-                <th>Score (%)</th>
-                <th>Descrição do Score</th>
-                <th></th>
+                <th style="min-width: 200px;">Score (%)</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <funcionario-row funcionarios="hierarquiaFuncionarios"></funcionario-row>
+            <tr ng-repeat="funcionario in funcionarios">
+                <td>{{ funcionario.nome }}</td>
+                <td>{{ funcionario.cargo.titulo }}</td>
+                <td>{{ funcionario.forcaSenha.descricao }}</td>
+                <td style="min-width: 200px;" >
+                    <div style="min-width: 200px;" class="progress">
+                        <div class="progress-bar" role="progressbar"
+                             ng-class="{
+                                'is-weak': funcionario.forcaSenha.score < 20,
+                                'is-medium': funcionario.forcaSenha.score >= 20 && funcionario.forcaSenha.score < 60,
+                                'is-strong': funcionario.forcaSenha.score >= 60 && funcionario.forcaSenha.score < 80,
+                                'is-very-strong': funcionario.forcaSenha.score >= 80
+                             }"
+                             ng-style="{'width': funcionario.forcaSenha.score + '%'}" 
+                             aria-valuenow="{{ funcionario.forcaSenha.score }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100">
+                             {{ funcionario.forcaSenha.score }}%
+                        </div>
+                    </td>
+                <td>
+                    <button class="btn btn-primary" ng-click="editarFuncionario(funcionario)">Editar</button>
+                    <button class="btn btn-danger" ng-click="excluirFuncionario(funcionario.id)">Excluir</button>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

@@ -28,3 +28,5 @@ CREATE TABLE IF NOT EXISTS funcionario (
     FOREIGN KEY (lideranca_id) REFERENCES funcionario (id)
 );
 
+
+

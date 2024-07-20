@@ -19,7 +19,15 @@ body {
     border-radius: 0.25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
-
+.container-list {
+    min-width: 900px;
+    width: fit-content;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
 h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -82,35 +90,56 @@ button[type="submit"]:hover {
 
 .table {
     width: 100%;
-    margin-bottom: 1rem;
-    color: #212529;
     border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
 }
 
-.table th,
-.table td {
-    padding: 0.75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
 }
 
-.table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
+/* Estilos para o cabeçalho da tabela */
+.table th {
+    background-color: #f2f2f2;
+    text-align: center;
 }
 
-.table tbody + tbody {
-    border-top: 2px solid #dee2e6;
+/* Estilos para as linhas da tabela */
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.table .table {
-    background-color: #fff;
+/* Estilos para os botões */
+.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.05);
+.btn-primary {
+    background-color: #007bff;
+    color: white;
 }
 
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
 /* Estilo para expandir/recolher sublistas */
 h2 {
     cursor: pointer;
